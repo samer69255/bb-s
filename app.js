@@ -47,7 +47,7 @@ function attack() {
 
 
 function getNow() {
-  var iraq = new Date(Date.now() + (new Date).getTimezoneOffset() *60000+ 10800000).getTime();
+  var iraq = new Date(Date.now() + (new Date).getTimezoneOffset() *60000).getTime();
   return iraq;
 }
 
