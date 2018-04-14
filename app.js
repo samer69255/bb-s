@@ -51,6 +51,7 @@ function getNow() {
   return iraq;
 }
 
+console.log(new Date(getNow()).getTime());
 
 
 module.exports = app;
