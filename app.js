@@ -51,6 +51,7 @@ function getNow() {
   return iraq;
 }
 
+console.log(new getNow());
 
 console.log(getNow());
 
