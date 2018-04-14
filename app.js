@@ -52,11 +52,9 @@ function getNow() {
 }
 
 console.log(new getNow());
-<<<<<<< HEAD
+
 
 console.log(getNow());
-=======
->>>>>>> 795550c48baeacdaa33ce0323cce6de4fbbdac30
 
 
 module.exports = app;
