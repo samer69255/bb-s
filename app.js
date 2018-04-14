@@ -47,11 +47,11 @@ function attack() {
 
 
 function getNow() {
-  var iraq = new Date(Date.now()).getTime();
+  var iraq = new Date().getTime();
   return iraq;
 }
 
-console.log(new Date(getNow()).getTime());
+console.log(new getNow());
 
 
 module.exports = app;
