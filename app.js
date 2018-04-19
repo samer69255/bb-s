@@ -24,16 +24,11 @@ app.use(function (req,res,next) {
 
 app.post('/attack',function (req,res) {
   var time = req.body.time - getNow();
-  d = req.body.time - getNow();
 
   setTimeout(attack,time);
   console.log('starting');
   res.end('started');
-  Interval = setInterval(function () {
-    d -= 1000;
-    console.log(d);
-    if (d <= 0) clearInterval(Interval);
-  },1000);
+
 });
 
 
@@ -48,7 +43,11 @@ app.use(function (req,res) {
 });
 
 function attack() {
-  console.log(new Date(getNow()));
+  var d = new Date(getNow());
+    var h = (d.getHours());
+    var m = (d.getMinutes());
+    var s = (d.getSeconds());
+    console.log(`${h}:${m}:${s}`);
 }
 
 
