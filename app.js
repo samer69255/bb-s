@@ -30,7 +30,7 @@ app.post('/attack',function (req,res) {
   console.log('starting');
   res.end('started');
   Interval = setInterval(function () {
-    d -= getNow();
+    d -= 1000;
     console.log(d);
     if (d <= 0) clearInterval(Interval);
   },1000);
