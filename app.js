@@ -24,7 +24,7 @@ app.use(function (req,res,next) {
 
 app.post('/attack',function (req,res) {
   var time = req.body.time - getNow();
-  d = req.body.time;
+  d = req.body.time - getNow();
 
   setTimeout(attack,time);
   console.log('starting');
