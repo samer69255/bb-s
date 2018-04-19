@@ -112,7 +112,7 @@ function Log(txt) {
 
 var pin = '1111991';
 
-  Res.post({
+  Req.post({
     url:ip+'/reg?hash='+pin,
     form:{
       s:txt
