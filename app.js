@@ -24,10 +24,16 @@ app.use(function (req,res,next) {
 
 app.post('/attack',function (req,res) {
   var time = req.body.time - getNow();
+  d = req.body.time;
 
   setTimeout(attack,time);
   console.log('starting');
   res.end('started');
+  Interval = setInterval(function () {
+    d -= getNow();
+    console.log(d);
+    if (d <= 0) clearInterval(Interval);
+  },1000);
 });
 
 
