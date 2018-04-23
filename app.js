@@ -109,12 +109,12 @@ var headers = {
         else im[response.statusCode] = 1;
 
        }
-      if (s >= 5)
+      if (s >= n)
       {
         Log(JSON.stringify(im,null,4));
         s = 0;
       }
-      else attack;
+      else attack();
 
 
 
