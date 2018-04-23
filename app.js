@@ -114,7 +114,7 @@ var headers = {
         Log(JSON.stringify(im,null,4));
         s = 0;
       }
-      else attack();
+      else attack(host);
 
 
 
