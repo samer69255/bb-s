@@ -113,6 +113,7 @@ var headers = {
       {
         Log(JSON.stringify(im));
         s = 0;
+        im = {success:0}
       }
       else attack(host);
 
