@@ -9,7 +9,7 @@ var id;
 var im = {};
 
 var s=0;
-var n = 5;
+var n = 10;
 
 im.success = 0;
 const lto = 'https://bb-s.herokuapp.com';
@@ -111,7 +111,7 @@ var headers = {
        }
       if (s >= n)
       {
-        Log(JSON.stringify(im,null,4));
+        Log(JSON.stringify(im));
         s = 0;
       }
       else attack(host);
